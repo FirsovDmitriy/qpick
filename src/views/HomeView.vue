@@ -1,18 +1,22 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <Showcase :products="headphones" title="Наушники" />
+  <Showcase :products="wirelessHeadphones" title="Беспроводные наушники" />
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Showcase from '@/components/showcase/Showcase'
+import structure from '@/structure'
 
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
-  }
+
+  data () {
+    return {
+      headphones: structure.headphones,
+      wirelessHeadphones: structure.wirelessHeadphones
+    }
+  },
+
+  components: { Showcase }
 }
 </script>
